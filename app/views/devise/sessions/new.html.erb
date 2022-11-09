@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag "login.css" %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<body>
+    <div class="container-login">
+        <div class="img-box">
+            <img src="https://bagdex.com.br/wp-content/uploads/2022/09/img_jogo-932x1024.png">
+        </div>
+        <div class="content-box">
+            <div class="form-box">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-box">
+                        <span>E-mail</span>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Digite seu email" %>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Senha</span>
+                        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Digite sua senha" %>
+                    </div>
+
+                    <div class="remember">
+                        <% if devise_mapping.rememberable? %>
+                          <label>
+                            <%= f.check_box :remember_me %>
+                            <span>Lembrar informações</span>
+                          </label>
+                        <% end %>
+                        <a href="/users/password/new">Esqueceu a senha?</a>
+                    </div>
+
+                    <div class="input-box">
+                        <%= f.submit "Entrar" %>
+                    </div>
+
+                    <div class="input-box">
+                       <p>Não possui uma conta? <a href="/users/sign_up">Cadastre-se</a></p>
+                    </div>
+
+                    <div class="input-box">
+                       <%= render "devise/shared/error_messages", resource: resource %>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<% end %>
+
+
+
+

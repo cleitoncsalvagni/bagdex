@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag "forgot.css" %>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <body>
+    <div class="container-login">
+        <div class="content-box">
+            <div class="form-box">
+                <h2>Recuperar Senha</h2>
+                <form>
+                    <div class="input-box">
+                        <span>E-mail</span>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Digite seu email" %>
+                    </div>
+
+                    <div class="input-box">
+                       <a href="/users/sign_in">Retornar para o login</a>
+                    </div>
+
+                    <div class="input-box">
+                        <%= f.submit "Enviar" %>
+                    </div>
+
+
+                    <div class="input-box">
+                       <%= render "devise/shared/error_messages", resource: resource %>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html> 
+
+
+<% end %>
+
+
+  <%
+=begin%>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+  </div> 
+<%
+=end%>
