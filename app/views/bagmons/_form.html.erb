@@ -1,0 +1,37 @@
+<%= form_with(model: bagmon, local: true) do |form| %>
+  <% if bagmon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bagmon.errors.count, "error") %> prohibited this bagmon from being saved:</h2>
+
+      <ul>
+      <% bagmon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.text_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_id %>
+    <%= form.text_field :type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

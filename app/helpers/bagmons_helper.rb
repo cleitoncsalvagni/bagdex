@@ -1,0 +1,2 @@
+module BagmonsHelper
+end
