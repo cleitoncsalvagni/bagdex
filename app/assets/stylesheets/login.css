@@ -25,7 +25,7 @@
 
 .content-box {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
     width: 50%;
     height: 100%;
@@ -66,8 +66,8 @@
     color: #32324f;
     font-weight: 600;
     font-size: 2em;
-    text-transform: uppercase;
-    margin-bottom: 15px;
+    text-transform: none;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -106,7 +106,7 @@
     border: none;
     font-weight: 500;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 17px;
     transition: 0.3s;
 }
 
@@ -149,7 +149,7 @@
     margin: 40px 0 15px;
     font-weight: 500;
     text-align: center;
-    font-size: 22px;
+    font-size: 17px;
 }
 @media (max-width:868px) {
     .container-login .img-box{
