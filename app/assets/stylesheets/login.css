@@ -15,6 +15,7 @@
 .img-box {
     width: 50%;
     height: 100%;
+    display: flex;
 }
 
 .img-box img {
