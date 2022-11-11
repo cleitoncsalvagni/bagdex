@@ -14,6 +14,49 @@
 - Batalha entre os Bagmons criados.
 
 
+## Rodando localmente
+
+Clone o projeto
+
+```bash
+  git clone https://github.com/cleitoncsalvagni/bagdex
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd bagdex
+```
+
+Instale as dependências
+
+```bash
+  bundle install
+```
+
+Crie o banco de dados
+
+```bash
+  rails db:create
+```
+
+Faça a migration
+
+```bash
+  rails db:migration
+```
+
+Inicie o servidor
+
+```bash
+  rails s
+``` 
+```bash
+  rails s -b 0.0.0.0
+```
+
+
+
 ## Instalação
 
 Com o **Ruby** e o **Rails** já instalado:
