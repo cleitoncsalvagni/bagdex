@@ -1,2 +1,0 @@
-class Bagmon < ApplicationRecord
-end
