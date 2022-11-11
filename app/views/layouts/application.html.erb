@@ -113,8 +113,7 @@ nav {
     </style>
   </head>
 
-
-  <body>
+<% if user_signed_in? %>
   <header>
     <nav>
       <div class="logoArea">
@@ -130,6 +129,9 @@ nav {
         </ul>
       </nav>
   </header>
+<% end %>
+
+  <body>
     <%= yield %>
   </body>
 </html>
