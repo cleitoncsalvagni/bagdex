@@ -1,24 +1,35 @@
-# README
+## Bagdex & Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Este projeto é uma reprodução da Bagdex, criado em Ruby on Rails.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Funcionalidades
 
-* Database initialization
+- Autenticação: Login, Cadastro e Recuperação;
+- Listagem e criação de Bagmons;
+- Listagem e criação dos Tipos;
+- Batalha entre os Bagmons criados.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Instalação
 
-* Deployment instructions
+Com o **Ruby** e o **Rails** já instalado:
 
-* ...
+```bash
+  bundle install
+  rails db:create
+  rails db:migrate
+  rails s ou rails s -b 0.0.0.0
+```
+    
+## Autores
+
+- [@cleitoncsalvagni](https://www.github.com/cleitoncsalvagni)
+
+
+## Referência
+
+ - [Bagdex](https://bagdex.com.br/)
