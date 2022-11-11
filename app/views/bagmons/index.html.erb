@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bagmons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bagmons.each do |bagmon| %>
+      <tr>
+        <td><%= bagmon.number %></td>
+        <td><%= bagmon.name %></td>
+        <td><%= bagmon.image %></td>
+        <td><%= bagmon.type_id %></td>
+        <td><%= link_to 'Show', bagmon %></td>
+        <td><%= link_to 'Edit', edit_bagmon_path(bagmon) %></td>
+        <td><%= link_to 'Destroy', bagmon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bagmon', new_bagmon_path %>

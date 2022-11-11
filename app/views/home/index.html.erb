@@ -11,6 +11,11 @@
   padding: 0;
 }
 
+body {
+    background: url(https://bagdex.com.br/wp-content/uploads/2022/09/fundo_site_01.png) no-repeat center center;
+    background-size: cover;
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -31,8 +36,6 @@ nav {
 }
 
 main {
-  background: url(https://bagdex.com.br/wp-content/uploads/2022/09/fundo_site_01.png) no-repeat center center;
-  background-size: cover;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -58,13 +61,15 @@ main {
   color: #32324f;
   margin: 10px;
   margin-bottom: 30px;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
 }
 
 .content p {
   text-align: center;
   font-size: 20px;
   color: #32324f;
-  width: 65vw;
+  width: 63vw;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
 }
 
 .imagem {
@@ -105,8 +110,8 @@ main {
 
 .logoArea img {
     object-fit: contain;
-    height: 32px;
-    width: 60px;
+    height: 60px;
+    width: 70px;
 }
 
 .logoArea a {
@@ -153,8 +158,8 @@ main {
       </div>
         <ul class="nav-list">
           <li><a href="/">Início</a></li>
-          <li><a href="#">Bagmons</a></li>
-          <li><a href="#">Tipos</a></li>
+          <li><a href="/bagmons">Bagmons</a></li>
+          <li><a href="/types">Tipos</a></li>
           <li><a href="#">Batalhar</a></li>
           <li><a class="input"><%= button_to "Sair", destroy_user_session_path, method: :delete  %></a></li>
         </ul>

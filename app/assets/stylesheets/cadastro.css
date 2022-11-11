@@ -30,9 +30,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    border-radius: 10px;
-    height: 80%;
+    width: 40%;
+    border-radius: 30px;
+    height: 70%;
 }
 
 .content-box .form-box {

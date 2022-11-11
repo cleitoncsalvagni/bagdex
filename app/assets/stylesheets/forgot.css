@@ -27,11 +27,13 @@
 }
 
 .content-box {
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 100%;
+    width: 40%;
+    height: 50%;
+    border-radius: 30px;
 }
 
 .content-box .form-box {

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :types
+  resources :bagmons
   get 'home/index'
   devise_for :users
   root to: 'home#index'
