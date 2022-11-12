@@ -1,37 +1,222 @@
+<head>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box img {
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.img-box {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content-box .form-box {
+    align-items: center;
+    /* background-color: blue; */
+    justify-content: center;
+    width: 30%;
+}
+
+.content-box .form-box .ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box .form-box .ul li {
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.content-box .form-box .ul li:hover {
+    background: #e4e4e4;
+}
+
+.form-box .ul li img {
+    width: 40px;
+}
+
+.content-box .form-box h2 {
+    color: #32324f;
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: none;
+    text-align: center;
+}
+
+.content-box .form-box .input-box {
+    margin-bottom: 20px;
+}
+
+.content-box .form-box .input-box input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-weight: 400;
+    border: none;
+    font-size: 17px;
+    color: #32324f;
+    background-color: #ecf2f7;
+    border-radius: 5px;
+}
+
+.content-box .form-box .input-box span {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #32324f;
+    font-weight: 400;
+}
+
+.content-box .form-box .input-box input::placeholder {
+    color: #a9adb6;
+}
+
+
+.content-box .form-box .input-box input[type=submit] {
+    background: #32324f;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.content-box .form-box .input-box input[type=submit]:hover {
+    background: #3286ca;
+}
+
+.content-box .form-box .input-box p {
+    color: #32324f;
+}
+.content-box .form-box .input-box p a{
+    color: #4aa4ee;
+}
+
+.content-box .form-box .input-box p a:hover{
+    color: #3286ca;
+}
+.content-box .form-box h3
+{
+    color: #607d8b;
+    text-decoration: none;
+    margin: 40px 0 15px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 22px;
+}
+@media (max-width:868px) {
+    .container-form .img-box{
+        display: none;
+    }
+    .container-form .content-box{
+        width: 100%;
+    }
+    .container-form .content-box .form-box{
+        width: 100%;
+        padding: 40px;
+        background: white;
+        margin: 50px;
+    } 
+    .container-form .content-box .form-box h3{
+        margin: 30px 0 10px;
+    } 
+}
+
+  </style>
+</head>
+
 <%= form_with(model: bagmon, local: true) do |form| %>
-  <% if bagmon.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bagmon.errors.count, "error") %> prohibited this bagmon from being saved:</h2>
+<body>
+    <div class="container-form">
+        <div class="content-box">
+            <div class="form-box">
+            <div class="img-box">
+            <img src="https://tiermaker.com/images/templates/bgdex---primeira-gerao-15159207/151592071655509878.png">
+            </div>
+                <h2>Novo Bagmon</h2>
+                <form>
+                    <div class="input-box">
+                        <span>Numero</span>
+                        <%= form.number_field :number, class: "form-control", placeholder: "Informe a numero/id do Bagmon" %>
+                    </div>
 
-      <ul>
-      <% bagmon.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                    <div class="input-box">
+                        <span>Nome</span>
+                       <%= form.text_field :name, class: "form-control", placeholder: "Informe o nome do Bagmon" %>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Imagem (URL)</span>
+                        <%= form.text_field :image, class: "form-control", placeholder: "Informe a imagem do Bagmon" %>
+                    </div>
+
+                    <div class="input-box">
+                        <span>Tipo do Bagmon</span>
+                         <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
+                    </div>
+
+                     <div class="input-box">
+                        <%= form.submit "Criar" %>
+                    </div>
+
+                     <div class="input-box">
+                        <p><%= link_to 'Voltar', bagmons_path %></p>
+                    </div>
+
+                    <div class="input-box">
+                      <% if bagmon.errors.any? %>
+                        <div id="error_explanation">
+                       <ul>
+                          <span style="color: red">Ops! Problema ao salvar:</span>
+                            <% bagmon.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                       <% end %>
+                     </ul>
+                    </div>
+                    <% end %>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  <% end %>
+</body>
 
-  <div class="form-group">
-    <%= form.label :number %>
-    <%= form.number_field :number, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.text_field :image, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :type_id %>
-    <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
-  </div>
+</html>
 <% end %>
