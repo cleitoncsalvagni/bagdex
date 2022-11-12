@@ -1,33 +1,99 @@
-<p id="notice"><%= notice %></p>
+<head>
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  }
 
-<h1>Bagmons</h1>
+  body {
+    align-items: center;
+    justify-content: center;
+  }
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  .main {
+    display: flex; 
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px;
+    gap: 1rem;
+    justify-content: space-around; 
+  }
 
-  <tbody>
+  .main a {
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    text-decoration: none;
+  }
+
+  .card {
+    color: white;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    
+  }
+
+  .card p {
+    margin-bottom: 5px;
+  }
+
+  .bagmon {
+    width: 100%; height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  height: 8vh;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+  }
+
+  .title h1 {
+    color: #32324f;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+
+  .title p {
+    color: #999;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+
+  </style>
+<head>
+
+<body> 
+  <div class="title"> 
+    <h1>Bagmons</h1>
+    <p>Aqui começa a sua jornada!</p>
+  </div>
+  <div class="main">
     <% @bagmons.each do |bagmon| %>
-      <tr>
-        <td><%= bagmon.number %></td>
-        <td><%= bagmon.name %></td>
-        <td><%= bagmon.image %></td>
-        <td><%= bagmon.type_id %></td>
-        <td><%= link_to 'Show', bagmon %></td>
-        <td><%= link_to 'Edit', edit_bagmon_path(bagmon) %></td>
-        <td><%= link_to 'Destroy', bagmon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <a style='background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
+        <div class="card">
+          <div class="bagmon">
+            <%= image_tag bagmon.image, size: "250x250" %>
+          </div>
+          <h2><%= bagmon.name %></h2>
+          <p><%= bagmon.type.name %></p>
+        </div>
+      </a>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+</body>
 
 <%= link_to 'New Bagmon', new_bagmon_path %>
+
+        <%
+=begin%>
+ <td><%= link_to 'Show', bagmon %></td>
+        <td><%= link_to 'Edit', edit_bagmon_path(bagmon) %></td>
+        <td><%= link_to 'Destroy', bagmon, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+<%
+=end%>
