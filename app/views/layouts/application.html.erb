@@ -125,7 +125,7 @@ nav {
           <li><a href="/bagmons">Bagmons</a></li>
           <li><a href="/types">Tipos</a></li>
           <li><a href="#">Batalhar</a></li>
-          <li><a class="input"><%= button_to "Sair", destroy_user_session_path, method: :delete  %></a></li>
+          <li><a class="input"><%= button_to "Sair", destroy_user_session_path, method: :delete, data: { confirm: 'Deseja mesmo sair da sua conta?' }  %></a></li>
         </ul>
       </nav>
   </header>
