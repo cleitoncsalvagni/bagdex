@@ -55,18 +55,6 @@ Inicie o servidor
   rails s -b 0.0.0.0
 ```
 
-
-
-## Instalação
-
-Com o **Ruby** e o **Rails** já instalado:
-
-```bash
-  bundle install
-  rails db:create
-  rails db:migrate
-  rails s ou rails s -b 0.0.0.0
-```
     
 ## Autores
 
