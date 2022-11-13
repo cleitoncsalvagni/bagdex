@@ -1,24 +1,65 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @bagmon.number %>
-</p>
+<head>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-<p>
-  <strong>Name:</strong>
-  <%= @bagmon.name %>
-</p>
+  .img-tst {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 350px;
+    height: 350px;
+    object-fit: contain;
+  }
 
-<p>
-  <strong>Image:</strong>
-  <%= @bagmon.image %>
-</p>
+  .mainImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-<p>
-  <strong>Type:</strong>
-  <%= @bagmon.type_id %>
-</p>
+  .btn {
+    margin-top: 20px;
+  }
 
-<%= link_to 'Edit', edit_bagmon_path(@bagmon) %> |
-<%= link_to 'Back', bagmons_path %>
+  .btn button {
+    padding: 5px;
+    background-color: #32324f;
+    color: #000;
+    font-size: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="mainImage">
+    <p>
+      <img class='img-tst' src=<%= @bagmon.image %> >
+    </p>
+    <h2 style="color: <%= @bagmon.type.color %>">
+      <%= @bagmon.name %>
+    </h2>
+    
+    <p>
+      <strong>Tipo:</strong>
+      <%= @bagmon.type.name %>
+    </p> 
+
+  <div class="btn">
+    <button> <%= link_to 'Editar', edit_bagmon_path(@bagmon) %> </button>
+    <button> <%= link_to 'Voltar', bagmons_path %> </button>
+  </div>
+
+  </div>
+</body>
+
+
