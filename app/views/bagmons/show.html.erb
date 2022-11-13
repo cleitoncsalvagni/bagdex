@@ -26,6 +26,7 @@
 
   .btn {
     margin-top: 20px;
+    text-align: center;
   }
 
   .btn button {
@@ -33,7 +34,19 @@
     background-color: #32324f;
     color: #000;
     font-size: 15px;
-    margin-left: 10px;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  .btn .back-btn {
+    padding: 5px;
+    background-color: #369e35;
+    color: #000;
+    font-size: 15px;
+    margin-right: 20px;
+    border: none;
+    width: 100px;
     border-radius: 5px;
   }
 
@@ -55,8 +68,8 @@
     </p> 
 
   <div class="btn">
+    <button class="back-btn"> <%= link_to 'Voltar', bagmons_path %> </button>
     <button> <%= link_to 'Editar', edit_bagmon_path(@bagmon) %> </button>
-    <button> <%= link_to 'Voltar', bagmons_path %> </button>
   </div>
 
   </div>

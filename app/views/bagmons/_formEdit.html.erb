@@ -159,6 +159,21 @@
     } 
 }
 
+.input-box .btn button {
+    padding: 5px;
+    background-color: #369e35;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+.input-box .btn {
+    width: 100%;
+    text-align: center;
+}
+
   </style>
 </head>
 
@@ -197,7 +212,9 @@
                     </div>
 
                      <div class="input-box">
-                        <p><%= link_to 'Voltar', bagmons_path %></p>
+                        <div class="btn">
+                            <button> <%= link_to 'Voltar', bagmons_path %> </button>
+                        </div>
                     </div>
 
                     <div class="input-box">
