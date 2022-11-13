@@ -50,6 +50,10 @@
     border-radius: 5px;
   }
 
+  .mainImage p {
+    color: #32324f;
+  }
+
   </style>
 </head>
 
@@ -62,10 +66,16 @@
       <%= @bagmon.name %>
     </h2>
     
-    <p>
+    <p style="margin-top: 5px;">
+      <strong>Numero:</strong>
+      <%= @bagmon.number %>
+    </p>
+    
+    <p style="margin-top: 5px;">
       <strong>Tipo:</strong>
       <%= @bagmon.type.name %>
-    </p> 
+    </p>
+
 
   <div class="btn">
     <button class="back-btn"> <%= link_to 'Voltar', bagmons_path %> </button>
