@@ -15,13 +15,14 @@
 }
 
 .img-box img {
-    height: 200px;
+    height: 100px;
+    background: red;
+    border-radius: 10px;
     margin-bottom: 10px;
-    border-radius: 15px;
 }
 
 .img-box {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
@@ -69,6 +70,7 @@ display: flex;
 }
 
 .content-box .form-box h2 {
+    margin-top: 10vh;
     color: #32324f;
     font-weight: 600;
     font-size: 2em;
@@ -167,6 +169,17 @@ display: flex;
     background-color: #369e35;
     color: #000;
     font-size: 15px;
+    margin-right: 20px;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  .input-box .btn .btn-delete {
+    padding: 5px;
+    background-color: #800000;
+    color: #000;
+    font-size: 15px;
     border: none;
     width: 100px;
     border-radius: 5px;
@@ -180,10 +193,7 @@ display: flex;
     <div class="container-form">
         <div class="content-box">
             <div class="form-box">
-            <div class="img-box">
-            <img src="https://1.bp.blogspot.com/-TpyAV2TAygw/YC0VJixkjcI/AAAAAAAAsO4/HiEaePnUI1kLV4vZBZvUgcCjSdNacPSqgCLcBGAsYHQ/s1280/tipos.png">
-            </div>
-                <h2>Criar Tipo</h2>
+                <h2>Editar Tipo</h2>
                 <form>
                     <div class="input-box">
                         <span>Nome</span>
@@ -192,16 +202,17 @@ display: flex;
 
                     <div class="input-box">
                         <span>Cor (Hexadecimal)</span>
-                        <%= form.text_field :image, class: "form-control", placeholder: "Informe a cor. Ex: #FFFFFF" %>
+                        <%= form.text_field :color, class: "form-control", placeholder: "Informe a cor. Ex: #FFFFFF" %>
                     </div>
 
                      <div class="input-box">
                         <%= form.submit "Enviar" %>
                     </div>
 
-                     <div class="input-box">
+                  <div class="input-box">
                         <div class="btn">
                             <button> <%= link_to 'Voltar', types_path %> </button>
+                            <button class='btn-delete'> <%= link_to 'Excluir', type, method: :delete, data: { confirm: 'Confirma a exclusão do Tipo?' } %> </button>
                         </div>
                     </div>
 

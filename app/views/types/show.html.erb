@@ -1,14 +1,61 @@
-<p id="notice"><%= notice %></p>
+<head>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-<p>
-  <strong>Name:</strong>
-  <%= @type.name %>
-</p>
+.content {
+  text-align: center;
+  margin: 10px;
+}
 
-<p>
-  <strong>Color:</strong>
-  <%= @type.color %>
-</p>
+.content a {
+  color: #000;
+  font-size: 17px;
+}
 
-<%= link_to 'Edit', edit_type_path(@type) %> |
-<%= link_to 'Back', types_path %>
+  .btn {
+    margin-top: 20px;
+  }
+
+  .btn button {
+    padding: 5px;
+    color: #000;
+    font-size: 15px;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  .btn .back-btn {
+    padding: 5px;
+    color: #000;
+    font-size: 15px;
+    margin-right: 20px;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  h2 {
+    margin-top: 8vh;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class='content'>
+  <h2><%= @type.name %></h2>
+  <p style='color: <%= @type.color %>'> <%= @type.color %> </p>
+  
+    <div class="btn">
+      <button class="back-btn"> <%= link_to 'Voltar', types_path %> </button>
+      <button> <%= link_to 'Editar', edit_type_path(@type) %> </button>
+    </div>
+  </div>
+</body>
+
