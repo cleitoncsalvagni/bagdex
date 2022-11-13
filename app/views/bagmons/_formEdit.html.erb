@@ -165,6 +165,17 @@
     color: #000;
     font-size: 15px;
     border: none;
+    margin-right: 20px;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+.input-box .btn .btn-delete {
+    padding: 5px;
+    background-color: #800000;
+    color: #000;
+    font-size: 15px;
+    border: none;
     width: 100px;
     border-radius: 5px;
   }
@@ -214,6 +225,7 @@
                      <div class="input-box">
                         <div class="btn">
                             <button> <%= link_to 'Voltar', bagmons_path %> </button>
+                            <button class='btn-delete'> <%= link_to 'Excluir', bagmon, method: :delete, data: { confirm: 'Confirma a exclusão do Bagmon?' } %> </button>
                         </div>
                     </div>
 
