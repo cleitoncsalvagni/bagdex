@@ -1,27 +1,104 @@
+<head>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .container-global {
+        text-align: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    }
+  .title h1 {
+    color: #32324f;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+
+  .title p {
+    color: #999;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+
+  .titleText {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .select {
+    margin-top: 20px;
+  }
+
+  .select label {
+  }
+
+  .container-global button {
+    margin-top: 20px;
+    background: #32324f;
+    height: 6vh;
+    width: 200px;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 17px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.container-global button:hover {
+    background: #3286ca;
+}
+
+.versus {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+}
+    </style>
+</head>
+
+
+
 
 <% if @bagmon1 && @bagmon2 %>
-    <div class="container d-flex flex-column gap-3">
-        <h2 class="text-center">Resultado</h2>
+    <div>
+        <h2>Resultado</h2>
         <% @rounds.each do |round| %>
-            <p class="text-center"><%= round %></p>
+            <p><%= round %></p>
         <% end %>
     </div>
+
 <% else %>
-    <h1 class="text-center mb-3">Escolha 2 oponentes</h1>
-    <form action="/battle" class="container d-flex flex-column gap-3 w-50">
-        <div class="d-flex flex-row gap-3">
-            <div class="form-group w-50">
-                <label for="bagmon1">Bagmon 1</label>
-                <select required id="bagmon1" name="bagmon1" class="form-control">
+
+<body>
+<div class="container-global">
+  <div class="title"> 
+    <div class="titleText">
+        <h1>Batalha</h1>
+        <p>Escolha dois Bagmons para batalhar!</p>
+    </div>
+    <form action="/battle">
+        <div class="select">
+            <div>
+                <label for="bagmon1" style='font-weight: bold; margin-right: 10px'>Bagmon 01</label>
+                <select required id="bagmon1" name="bagmon1">
                     <option selected disabled>Selecione...</option>
                     <% @bagmons.each do |bagmon| %>
                         <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
                     <% end %>
                 </select>
             </div>
-            <div class="form-group w-50">
-                <label for="bagmon2">Bagmon 2</label>
-                <select required id="bagmon2" name="bagmon2" class="form-control">
+
+            <img class="versus" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2ec970f4-1706-4915-9a93-41f3d9c8202c/dehetv9-efad5ead-a1c7-4ef7-94d4-0c758e7eddb9.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJlYzk3MGY0LTE3MDYtNDkxNS05YTkzLTQxZjNkOWM4MjAyY1wvZGVoZXR2OS1lZmFkNWVhZC1hMWM3LTRlZjctOTRkNC0wYzc1OGU3ZWRkYjkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0QmcHDQ3cnXw7IEIRDrSGpOCb2657FSs0bOQWL0XM34" />
+
+            <div>
+                <label for="bagmon2" style='font-weight: bold; margin-right: 10px'>Bagmon 02</label>
+                <select required id="bagmon2" name="bagmon2">
                     <option selected disabled>Selecione...</option>
                     <% @bagmons.each do |bagmon| %>
                         <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
@@ -29,6 +106,8 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Battle</button>
+        <button>Batalhar</button>
     </form>
+</div class="container-global">
+</body>
 <% end %>
