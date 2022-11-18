@@ -2,28 +2,19 @@ class BattleController < ApplicationController
     def index
       @bagmons = Bagmon.all
   
-      # Check if bagmon1 and bagmon2 params are present
-  
-      # If they are, set @bagmon1 and @bagmon2 to the Bagmon with the id of the params
-  
       if (params[:bagmon1] && params[:bagmon2]) 
         @bagmon1 = Bagmon.find(params[:bagmon1])
         @bagmon2 = Bagmon.find(params[:bagmon2])
   
-        # Create a list of all rounds that have happened in this battle
-  
         @rounds = []
+        @winnerName = ''
+        @winnerImg = ''
   
         lifeBagmon1 = 100
         lifeBagmon2 = 100
-  
-        # Random pokemon attack initialization
         bagmonInAttack = rand(1..2) == 1 ? @bagmon1 : @bagmon2
-  
-        # While both bagmons are alive, keep fighting
-        while (lifeBagmon1 > 0 && lifeBagmon2 > 0) do
-  
-          # Bagmon 1 attack bagmons 2 and remove random between 5 and 10 life points
+
+        while (lifeBagmon1 > 0 && lifeBagmon2 > 0) do 
   
           if (bagmonInAttack == @bagmon1)
             attackValue = rand(5..10)
@@ -37,12 +28,13 @@ class BattleController < ApplicationController
             bagmonInAttack = @bagmon1
           end
         end
-  
-        # If bagmon 1 is alive, bagmon 1 wins, else bagmon 2 wins
+
         if (lifeBagmon1 > 0)
-          @rounds << @bagmon1.name + " venceu!"
+          @winnerName << @bagmon1.name
+          @winnerImg << @bagmon1.image
         else
-          @rounds << @bagmon2.name + " venceu!"
+          @winnerName << @bagmon2.name
+          @winnerImg << @bagmon2.image
         end
       end
     end
