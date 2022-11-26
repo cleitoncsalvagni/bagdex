@@ -1,40 +1,47 @@
 class BattleController < ApplicationController
     def index
       @bagmons = Bagmon.all
-  
-      if (params[:bagmon1] && params[:bagmon2]) 
+
+      if (params[:bagmon1] && params[:bagmon2])
+
+        # Pega os parametros dos bagmons
         @bagmon1 = Bagmon.find(params[:bagmon1])
         @bagmon2 = Bagmon.find(params[:bagmon2])
-  
-        @rounds = []
-        @winnerName = ''
-        @winnerImg = ''
-  
-        lifeBagmon1 = 100
-        lifeBagmon2 = 100
-        bagmonInAttack = rand(1..2) == 1 ? @bagmon1 : @bagmon2
 
-        while (lifeBagmon1 > 0 && lifeBagmon2 > 0) do 
+        # Criação das variáveis
+        @rodada1 = []
+        @rodada2 = []
+        @vencedor = ''
+        @vencedorImg = ''
+        vidaBagmon1 = 100
+        vidaBagmon2 = 100
+        quemAtaca = rand(1..2) == 1 ? @bagmon1 : @bagmon2
+
+        # Batalha
+
+        while (vidaBagmon1 > 0 && vidaBagmon2 > 0) do 
   
-          if (bagmonInAttack == @bagmon1)
-            attackValue = rand(5..10)
-            lifeBagmon2 -= attackValue
-            @rounds << @bagmon1.name + " atacou " + @bagmon2.name + " e tirou " + attackValue.to_s + " pontos de vida. " + @bagmon2.name + " agora tem " + lifeBagmon2.to_s + " pontos de vida."
-            bagmonInAttack = @bagmon2
+          if (quemAtaca == @bagmon1)
+            valorAtaque = rand(5..10)
+            vidaBagmon2 -= valorAtaque
+            @rodada1 << "#{@bagmon1.name} atacou o #{@bagmon2.name} com #{valorAtaque} de dano. Restam #{vidaBagmon2} de vida."
+            quemAtaca = @bagmon2
           else
-            attackValue = rand(5..10)
-            lifeBagmon1 -= attackValue
-            @rounds << @bagmon2.name + " atacou " + @bagmon1.name + " e tirou " + attackValue.to_s + " pontos de vida. " + @bagmon1.name + " agora tem " + lifeBagmon1.to_s + " pontos de vida."
-            bagmonInAttack = @bagmon1
+            valorAtaque = rand(5..10)
+            vidaBagmon1 -= valorAtaque
+            @rodada2 << "#{@bagmon2.name} atacou o #{@bagmon1.name} com #{valorAtaque} de dano. Restam #{vidaBagmon1} de vida."
+            quemAtaca = @bagmon1
           end
         end
 
-        if (lifeBagmon1 > 0)
-          @winnerName << @bagmon1.name
-          @winnerImg << @bagmon1.image
+        #Armazena quem chega primeiro a vida 0 e declara vencedor
+
+        if (vidaBagmon1 > 0)
+          @vencedor << @bagmon1.name
+          @vencedorImg << @bagmon1.image
         else
-          @winnerName << @bagmon2.name
-          @winnerImg << @bagmon2.image
+          @vencedor << @bagmon2.name
+          @vencedorImg << @bagmon2.image 
         end
       end
     end

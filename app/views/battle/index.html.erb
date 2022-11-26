@@ -158,6 +158,19 @@
     font-size: 17px;
     transition: 0.3s;
 }
+
+#rodada {
+  margin: 20px;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.rodadaBagmons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
     </style>
 
     
@@ -170,29 +183,45 @@
         <div class="titleText">
              
         </div>
-            <img class='winnerImg' src=<%= @winnerImg %> />
+            <img class='winnerImg' src=<%= @vencedorImg %> />
             <h1 style='margin-top: 20px; color: #000 '>Vencedor</h1>
             <div class='containerWinner'>
-            <h2 class='titleWinnerName' style='color: #fff;'><%= @winnerName %></h2>
+            <h2 class='titleWinnerName' style='color: #fff;'><%= @vencedor %></h2>
             </div>
         </div>
     </div>
 
-    <button id="myBtn" class="openModal">Ver histórico da batalha</button>
+    <button id="myBtn" class="openModal">Ver detalhes da batalha</button>
 
 <div id="myModal" class="modal">
 
+
   <div class="modal-content">
     <span class="close">&times;</span>
-            <% @rounds.each do |round| %>
-            <p style='margin: 5px'><%= round %></p>
-        <% end %>
+            <% @rodada1.each do |rodada1|%>
+              <% @rodada2.each do |rodada2| %>
+              <div class='rodada1'>
+              <p id='rodada' style='text-align: left; background-color: #E7E7E7;'>
+              <span> <%= rodada1 %> </span>
+              </p>
+              </div>
+              <div class='rodada2'>
+              <p id='rodada' style='text-align: right; background-color: #FFE5DF;'>
+              <span> <%= rodada2 %> </span>
+              </p>
+              </div>
+              <% end %>
+            <% end %>
+            <div style='margin: 5px; margin-top: 15px; text-align: center; align-items; center; justify-content: center;'>
+            <p style='font-weight: bold; font-size: 20px'>
+              <img src="https://www.imagensempng.com.br/wp-content/uploads/2021/08/03-9.png" style="width: 30px; height: 30px" />
+             Vencedor: <%= @vencedor %>
+             </p>
   </div>
 
 </div>
 
 <script>
-
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 
