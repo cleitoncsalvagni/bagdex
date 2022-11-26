@@ -2,8 +2,20 @@
 
 #### Este projeto é uma reprodução da Bagdex, criado em Ruby on Rails.
 
+## Screenshots
 
-
+![Login](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Login.png)
+![Cadastro](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Cadastro.png)
+![Home](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Inicio.png)
+![Bagmons](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Bagmons.png)
+![CriarBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Criar_Bagmon.png)
+![VerBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Ver%20Bagmon.png)
+![EditarBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Editar_Bagmon.png)
+![CriarTipo](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Criar_Tipo.png)
+![EditarBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Editar_Bagmon.png)
+![Batalha](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Batalha.png)
+![Vencedor](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Vencedor.png)
+![DetalhesBattle](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Detalhes_Batalha.png)
 
 
 ## Funcionalidades
