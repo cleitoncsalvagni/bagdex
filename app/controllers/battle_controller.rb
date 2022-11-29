@@ -22,12 +22,12 @@ class BattleController < ApplicationController
         while (vidaBagmon1 > 0 && vidaBagmon2 > 0) do 
   
           if (quemAtaca == @bagmon1)
-            valorAtaque = rand(5..10)
+            valorAtaque = rand(5..15)
             vidaBagmon2 -= valorAtaque
             @rodada1 << "#{@bagmon1.name} atacou o #{@bagmon2.name} com #{valorAtaque} de dano. Restam #{vidaBagmon2} de vida."
             quemAtaca = @bagmon2
           else
-            valorAtaque = rand(5..10)
+            valorAtaque = rand(5..15)
             vidaBagmon1 -= valorAtaque
             @rodada2 << "#{@bagmon2.name} atacou o #{@bagmon1.name} com #{valorAtaque} de dano. Restam #{vidaBagmon1} de vida."
             quemAtaca = @bagmon1
