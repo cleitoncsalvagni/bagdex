@@ -1,6 +1,6 @@
 ## Bagdex & Ruby on Rails
 
-#### Este projeto é uma reprodução da Bagdex, criado em Ruby on Rails.
+##### Este projeto é uma reprodução da Bagdex, criado em Ruby on Rails para um projeto da faculdade.
 
 ## Screenshots
 
