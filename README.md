@@ -12,7 +12,6 @@
 ![VerBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Ver%20Bagmon.png)
 ![EditarBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Editar_Bagmon.png)
 ![CriarTipo](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Criar_Tipo.png)
-![EditarBag](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Editar_Bagmon.png)
 ![Batalha](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Batalha.png)
 ![Vencedor](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Vencedor.png)
 ![DetalhesBattle](https://github.com/cleitoncsalvagni/bagdex/blob/main/Prints/Detalhes_Batalha.png)
